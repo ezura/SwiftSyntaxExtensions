@@ -17,13 +17,14 @@ extension TriviaPiece {
              .formfeeds,
              .newlines,
              .carriageReturns,
-             .carriageReturnLineFeeds,
-             .garbageText:
+             .carriageReturnLineFeeds:
             return nil
         case .lineComment(let comment),
              .blockComment(let comment),
              .docLineComment(let comment),
-             .docBlockComment(let comment):
+             .docBlockComment(let comment),
+             .shebang(let comment),
+             .unexpectedText(let comment):
             return comment
         }
     }
